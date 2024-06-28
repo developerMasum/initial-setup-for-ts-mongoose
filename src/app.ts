@@ -2,8 +2,8 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import cors from "cors";
-import express, { Application, Request, Response } from "express";
+import cors from 'cors';
+import express, { Application, Request, Response } from 'express';
 
 const app: Application = express();
 
@@ -14,18 +14,18 @@ const app: Application = express();
 app.use(express.json());
 
 // turn on cors true for redux Credential
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
 
 // application routes
 // import router from './app/routes';
 // app.use('/api/v1', router);
 
 const test = async (req: Request, res: Response) => {
-  const a = "start,server running mama!!";
+  const a = 'portfolio server is running !!';
   res.send(a.toString()); // Ensure sending a string
 };
 
-app.get("/", test);
+app.get('/', test);
 
 // import globalErrorHandler from './app/middlewares/globalErrorhandler';
 // app.use(globalErrorHandler);
