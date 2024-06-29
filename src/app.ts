@@ -4,6 +4,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import cors from 'cors';
 import express, { Application, Request, Response } from 'express';
+import router from './app/routes';
 
 const app: Application = express();
 
@@ -18,7 +19,7 @@ app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
 
 // application routes
 // import router from './app/routes';
-// app.use('/api/v1', router);
+app.use('/api', router);
 
 const test = async (req: Request, res: Response) => {
   const a = 'portfolio server is running !!';
